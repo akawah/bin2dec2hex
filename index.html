@@ -2,11 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>bin2dec2hex</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 <body>
+<div class="wrap">
     
-    <script src="script.js"></script>
+    <div class="calc">
+        <div class="input-wrap">
+            <div class="input-title">BIN</div>
+            <input type="text" class="input bin">
+        </div>
+        <div class="input-wrap">
+            <div class="input-title">DEC</div>
+            <input type="text" class="input dec" autofocus>
+        </div>
+        <div class="input-wrap">
+            <div class="input-title">HEX</div>
+            <input type="text" class="input hex">
+        </div>
+    </div>
+
+    <div class="keys">
+        <div class="keys-wrap">
+            <button class="key key-bin">0</button>
+            <button class="key key-bin">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+            <button class="key">4</button>
+        </div>
+        <div class="keys-wrap">
+            <button class="key">5</button>
+            <button class="key">6</button>
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+        </div>
+        <div class="keys-wrap">
+            <button class="key key-hex" disabled>A</button>
+            <button class="key key-hex" disabled>B</button>
+            <button class="key key-hex" disabled>C</button>
+            <button class="key key-hex" disabled>D</button>
+            <button class="key key-hex" disabled>E</button>
+            <button class="key key-hex" disabled>F</button>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="ctl ctl-backspace">⇤</button>
+        <button class="ctl ctl-del">del</button>
+        <button class="ctl ctl-left">←</button>
+        <button class="ctl ctl-right">→</button>
+        <button class="ctl ctl-decrement">-</button>
+        <button class="ctl ctl-increment">+</button>
+    </div>
+</div>
+<script src="script.js"></script> 
 </body>
 </html>
