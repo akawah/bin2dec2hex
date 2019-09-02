@@ -12,19 +12,18 @@
 </head>
 <body>
 <div class="wrap">
-    
     <div class="calc">
         <div class="input-wrap">
             <div class="input-title">BIN</div>
-            <input type="text" class="input bin">
+            <input type="text" class="input bin" inputmode="none">
         </div>
         <div class="input-wrap">
             <div class="input-title">DEC</div>
-            <input type="text" class="input dec" autofocus>
+            <input type="text" class="input dec" inputmode="none" autofocus>
         </div>
         <div class="input-wrap">
             <div class="input-title">HEX</div>
-            <input type="text" class="input hex">
+            <input type="text" class="input hex" inputmode="none">
         </div>
     </div>
 
@@ -53,14 +52,25 @@
         </div>
     </div>
     <div class="controls">
-        <button class="ctl ctl-backspace">⇤</button>
-        <button class="ctl ctl-del">del</button>
-        <button class="ctl ctl-left">←</button>
-        <button class="ctl ctl-right">→</button>
-        <button class="ctl ctl-decrement">-</button>
+        <button class="ctl ctl-backspace">⬅</button>
+        <button class="ctl ctl-del" style="font-size:14px">del</button>
+        <button class="ctl ctl-left">⇽</button>
+        <button class="ctl ctl-right">⇾</button>
+        <button class="ctl ctl-decrement">−</button>
         <button class="ctl ctl-increment">+</button>
     </div>
 </div>
-<script src="script.js"></script> 
+
+<!-- <div class="touch"></div> -->
+
+<script src="script.js"></script>
+
+<!-- <script>
+    if('ontouchstart' in window)
+        document.querySelector('.touch').textContent = 'touch device';
+    else
+        document.querySelector('.touch').textContent = 'mouse device';
+</script> -->
+
 </body>
 </html>
