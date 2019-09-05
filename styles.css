@@ -79,7 +79,7 @@ html,body{
     color: #777;
     background: rgba(200,200,200,0.15);
     cursor: pointer;
-    transition: background 0.2s ease-out;
+    transition: background 0.2s ease-out, opacity 0.2s;
 }
 .key{
     font-size: 14px;
