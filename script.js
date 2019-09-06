@@ -1,13 +1,40 @@
-let calc = document.querySelector('.calc');
-let input = document.querySelector('.input');
-let bin = document.querySelector('.bin');
-let dec = document.querySelector('.dec');
-let hex = document.querySelector('.hex');
-let key = document.querySelectorAll('.key');
+let wrap = document.querySelector('.wrap');
+let calc = wrap.querySelector('.calc');
+// let input = document.querySelector('.input');
+let bin = calc.querySelector('.bin');
+let dec = calc.querySelector('.dec');
+let hex = calc.querySelector('.hex');
+let keysWrap = wrap.querySelector('.keys');
+let keys = keysWrap.querySelectorAll('.key');
+// let controls = keysWrap.querySelectorAll('.ctl');
+
+
+
+let getCursorChunks = (element) => {
+    // console.log(element);
+    let start = element.selectionStart;
+    let end = element.selectionEnd;
+    let array = element.value.split('');
+    // console.log(start, end, array);
+    
+    
+    let leftArr = array.splice(0, start);
+    let middleArr = array.splice(start, end);
+    let rightArr = array.splice(end, -1);
+    console.log(leftArr, middleArr, rightArr);
+    /*return {
+        left: leftArr.join(''),
+        middle: middleArr.join(''),
+        right: rightArr.join('')
+    };*/
+};
+
+
 
 let inputSymbol = (field, symbol) => {
     let value = field.value;
-    let start = field.selectionStart;
+    getCursorChunks(field);
+    /*let start = field.selectionStart;
     let end = field.selectionEnd;
     let array = value.split('');
     if (start == end) {
@@ -18,7 +45,7 @@ let inputSymbol = (field, symbol) => {
     field.value = array.join('');
     field.selectionEnd = start + 1;
     
-    updateFields();
+    updateFields();*/
 };
 
 let inputControl = (field, btn) => {
@@ -96,37 +123,45 @@ let updateFields = () => {
     }
 };
 
+
+
+
 document.addEventListener('mousedown', (e) => {
     e.stopPropagation();
     let target = e.target;
-    if (target.classList.contains('key')) {
+    
+    if (!target.classList.contains('input')){
         e.preventDefault();
+    }
+    
+    // console.log(target);
+    
+    if (target.classList.contains('key')) {
         inputSymbol(document.activeElement, target.textContent);
     } else if (target.classList.contains('ctl')) {
-        e.preventDefault();
         inputControl(document.activeElement, target);
     }
 });
 
-calc.addEventListener('click', (e) => {
+calc.addEventListener('click', (e) => { // деактивация при изменении фокуса в инпутах
     let target = e.target;
     if (target == bin) {
-        for (let i = 0, len = key.length; i < len; i++) {
-            if (key[i].classList.contains('key-bin'))
-                key[i].disabled = false;
+        for (let i = 0, len = keys.length; i < len; i++) {
+            if (keys[i].classList.contains('key-bin'))
+                keys[i].disabled = false;
             else
-                key[i].disabled = true;
+                keys[i].disabled = true;
         }
     } else if (target == dec) {
-        for (let i = 0, len = key.length; i < len; i++) {
-            if (key[i].classList.contains('key-hex'))
-                key[i].disabled = true;
+        for (let i = 0, len = keys.length; i < len; i++) {
+            if (keys[i].classList.contains('key-hex'))
+                keys[i].disabled = true;
             else
-                key[i].disabled = false;
+                keys[i].disabled = false;
         }
     } else if (target == hex) {
-        for (let i = 0, len = key.length; i < len; i++) {
-            key[i].disabled = false;
+        for (let i = 0, len = keys.length; i < len; i++) {
+            keys[i].disabled = false;
         }
     }
 });

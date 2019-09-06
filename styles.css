@@ -84,16 +84,25 @@ html,body{
 .key{
     font-size: 14px;
 }
-.ctl{
-    font-size: 18px;
-}
 .key:disabled{
     opacity: 0.5;
     background: #fff;
     cursor: default;
 }
-.key:active, .ctl:active{
+.key:active{
     background: rgba(180, 208, 199, 0.9);
+}
+.controls{
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+}
+.ctl{
+    background: rgba(180, 208, 199, 0.4);
+    font-size: 18px;
+}
+.ctl:active{
+    background: rgba(180, 208, 199, 0.04);
 }
 @media screen and (max-height: 340px) {
     .wrap{

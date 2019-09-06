@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="keys">
+    <div class="keys" style="display:none;">
         <div class="keys-wrap">
             <button class="key key-bin">0</button>
             <button class="key key-bin">1</button>
@@ -50,27 +50,29 @@
             <button class="key key-hex" disabled>E</button>
             <button class="key key-hex" disabled>F</button>
         </div>
+        
+        <div class="controls">
+            <button class="ctl ctl-backspace">⬅</button>
+            <button class="ctl ctl-del" style="font-size:14px">del</button>
+            <button class="ctl ctl-left">⇽</button>
+            <button class="ctl ctl-right">⇾</button>
+            <button class="ctl ctl-decrement">−</button>
+            <button class="ctl ctl-increment">+</button>
+        </div>
     </div>
-    <div class="controls">
-        <button class="ctl ctl-backspace">⬅</button>
-        <button class="ctl ctl-del" style="font-size:14px">del</button>
-        <button class="ctl ctl-left">⇽</button>
-        <button class="ctl ctl-right">⇾</button>
-        <button class="ctl ctl-decrement">−</button>
-        <button class="ctl ctl-increment">+</button>
+    
+    <div class="tip" style="display:none;">
+        -1 +1
     </div>
 </div>
 
-<!-- <div class="touch"></div> -->
-
-<script src="script.js"></script>
-
-<!-- <script>
+<script>
     if('ontouchstart' in window)
-        document.querySelector('.touch').textContent = 'touch device';
+        document.querySelector('.keys').removeAttribute('style');
     else
-        document.querySelector('.touch').textContent = 'mouse device';
-</script> -->
+        document.querySelector('.tip').removeAttribute('style');
+</script>
+<script src="script.js"></script>
 
 </body>
 </html>
