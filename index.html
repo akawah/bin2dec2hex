@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <title>bin2dec2hex</title>
+    <title>bin-dec-hex</title>
     <link href="https://fonts.googleapis.com/css?family=Nova+Mono&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <style>
-
-    </style>
+    <script>
+        let touch = ('ontouchstart' in window) ? true : false;
+    </script>
 </head>
 <body>
 <div class="wrap">
+    
+    <div class="logo" style="display:none;"><img src="logo.svg" alt=""></div>
+    
     <div class="calc">
         <div class="input-wrap">
             <div class="input-title">BIN</div>
@@ -62,15 +65,18 @@
     </div>
     
     <div class="tip" style="display:none;">
-        -1 +1
+        <div class="keyboard top" title="or press key Arrow Up"><button id="top">↑</button><label>increment</label></div>
+        <div class="keyboard bottom" title="or press key Arrow Down"><button id="bottom">↓</button><label>decrement</label></div>
     </div>
 </div>
 
 <script>
-    if('ontouchstart' in window)
+    if(touch) {
+        document.querySelector('.logo').removeAttribute('style');
         document.querySelector('.keys').removeAttribute('style');
-    else
+    } else {
         document.querySelector('.tip').removeAttribute('style');
+    }
 </script>
 <script src="script.js"></script>
 

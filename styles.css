@@ -1,6 +1,7 @@
 html,body{
     margin: 0;
     padding: 0;
+    font-family: 'Nova Mono', sans-serif;
 }
 .wrap{
     display: flex;
@@ -9,9 +10,16 @@ html,body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
     font-size: 16px;
     color: #777;
+}
+.logo{
+    flex: 0 0 20%;
+    margin: 0 auto;
+}
+.logo img{
+    width: 72px;
+    height: 72px;
 }
 .calc{
     width: 100%;
@@ -34,7 +42,7 @@ html,body{
     outline: none;
     line-height: 1.2;
     font-size: 24px;
-    font-family: 'Nova Mono';
+    font-family: 'Nova Mono', sans-serif;
     color: #9e5477;
     background: transparent;
     transition: all 0.2s;
@@ -104,15 +112,38 @@ html,body{
 .ctl:active{
     background: rgba(180, 208, 199, 0.04);
 }
-@media screen and (max-height: 340px) {
-    .wrap{
-        justify-content: flex-start;
-    }
-    .calc{
-        margin-bottom: 0;
-    }
-    .input{
-        height: 36px;
-        font-size: 22px;
-    }
+.keyboard{
+    margin: 3px 10px;
+}
+#top, #bottom{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 2px 8px 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    line-height: 1;
+    outline: none;
+    background-color: rgba(200,200,200,0.15);
+    color: inherit;
+    font-size: 14px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+#top:hover + label, #bottom:hover + label{
+    color: #555;
+}
+label{
+    font-size: 13px;
+    vertical-align: -1px;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+label:hover{
+    color: #555;
+}
+@media screen and (orientation:landscape){
+   .logo{
+        display: none;
+   }
 }
