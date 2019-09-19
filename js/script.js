@@ -24,8 +24,10 @@ let inputDecrement = () => {
 };
 
 let updateFields = (input) => {
-    if (input.value < 0 || input.value == '') {
+    if (input.value == '') {
         bin.value = dec.value = hex.value = '';
+    } else if (input.value == 0){
+        bin.value = dec.value = hex.value = 0;
     } else {
         if (input == bin) {
             dec.value = parseInt(bin.value, 2).toString(10);
