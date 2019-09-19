@@ -1,4 +1,10 @@
 /.idea
 /node_modules
 /sklad
+<<<<<<< HEAD
 .gitignore
+=======
+.gitignore
+package.json
+package-lock.json
+>>>>>>> aa15c58fc8d5343c302f49290862d72d4a78fa7a
