@@ -1,0 +1,26 @@
+{
+  "name": "bin2dec2hex",
+  "version": "0.0.9",
+  "description": "bin-dec-hex",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akawah/bin2dec2hex.git"
+  },
+  "engines": {
+    "node": "8.9.4"
+  },
+  "author": "akawah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akawah/bin2dec2hex/issues"
+  },
+  "homepage": "https://github.com/akawah/bin2dec2hex#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
