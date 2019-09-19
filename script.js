@@ -24,7 +24,7 @@ let inputDecrement = () => {
 };
 
 let updateFields = (input) => {
-    if (input.value <= 0) {
+    if (input.value < 0 || input.value == '') {
         bin.value = dec.value = hex.value = '';
     } else {
         if (input == bin) {
