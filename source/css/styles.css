@@ -27,6 +27,7 @@ html,body{
 .logo{
     flex: 0 0 20%;
     margin: 0 auto;
+    text-align: center;
 }
 .logo img{
     width: 72px;
