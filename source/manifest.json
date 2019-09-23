@@ -1,0 +1,16 @@
+{
+  "name": "bin-dec-hex converter",
+  "short_name": "bin-dec-hex",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#82A689",
+  "icons": [
+    {
+      "src": "img/logo.svg",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    }
+  ]
+}
