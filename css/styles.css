@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto.eot");
+  src: url("../fonts/roboto.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/roboto.woff2") format("woff2"),
+    url("../fonts/roboto.woff") format("woff"),
+    url("../fonts/roboto.ttf") format("truetype"),
+    url("../fonts/roboto.svg#roboto") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: roboto, monospace;
+}
+.wrap {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #777;
+}
+.logo {
+  flex: 0 0 20%;
+  margin: 0 auto;
+  text-align: center;
+}
+.logo img {
+  width: 72px;
+  height: 72px;
+}
+.btnInstall {
+  margin-top: 10px;
+  color: #bbb;
+  font-size: 10px;
+  font-style: normal;
+}
+.calc {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 10px 40px 10px;
+}
+.input-wrap {
+  position: relative;
+  margin: 7px 10px;
+  background-color: rgba(200, 200, 200, 0.15);
+}
+.input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: 1px solid #777;
+  outline: none;
+  line-height: 1.2;
+  font-size: 24px;
+  font-family: roboto, monospace;
+  color: #9e5477;
+  transition: all 0.2s;
+  text-align: right;
+  overflow: hidden;
+}
+.input:focus {
+  background-color: rgba(180, 208, 199, 0.3);
+}
+.input-title {
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  font-family: roboto, monospace;
+  font-size: 12px;
+  color: #999;
+  user-select: none;
+}
+.hex {
+  text-transform: uppercase;
+}
+.calc {
+  max-width: 720px;
+  margin-bottom: 12px;
+}
+.keys {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2px auto;
+}
+.keys-wrap,
+.controls {
+  display: flex;
+}
+.key,
+.ctl {
+  width: 36px;
+  height: 36px;
+  margin: 4px;
+  outline: none;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  color: #777;
+  background: rgba(200, 200, 200, 0.15);
+  cursor: pointer;
+  transition: background 0.2s ease-out, opacity 0.2s;
+}
+.key {
+  font-size: 14px;
+}
+.key:disabled {
+  opacity: 0.5;
+  background: #fff;
+  cursor: default;
+}
+.key:active {
+  background: rgba(180, 208, 199, 0.9);
+}
+.controls {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+}
+.ctl {
+  background: rgba(180, 208, 199, 0.4);
+  font-size: 18px;
+}
+.ctl:active {
+  background: rgba(180, 208, 199, 0.04);
+}
+.keyboard {
+  margin: 3px 10px;
+}
+#top,
+#bottom {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 2px 8px 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  line-height: 1;
+  outline: none;
+  background-color: rgba(200, 200, 200, 0.15);
+  color: inherit;
+  font-size: 14px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+#top:hover + label,
+#bottom:hover + label {
+  color: #555;
+}
+label {
+  font-size: 13px;
+  vertical-align: -1px;
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+label:hover {
+  color: #555;
+}
+@media screen and (orientation: landscape) {
+  .logo {
+    display: none;
+  }
+}
