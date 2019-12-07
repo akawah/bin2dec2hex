@@ -22,13 +22,14 @@
     <link href="css/styles.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script>
-        "use strict";
-        if ("serviceWorker" in navigator) {
-          window.addEventListener("load", function() {
-            navigator.serviceWorker.register("sw.js");
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker
+              .register('sw.js');
+              //.then(registration => console.log(registration));
           });
         }
-        var touch = "ontouchstart" in window ? true : false;
+        let touch = ('ontouchstart' in window) ? true : false;
     </script>
 </head>
 <body>
@@ -95,31 +96,37 @@
 </div>
 
 <script>
-    "use strict";
-    var _this = void 0;
-    if (touch) {
-      document.querySelector(".logo").removeAttribute("style");
-      document.querySelector(".keys").removeAttribute("style");
+    if(touch) {
+        document.querySelector('.logo').removeAttribute('style');
+        document.querySelector('.keys').removeAttribute('style');
     } else {
-      document.querySelector(".tip").removeAttribute("style");
+        document.querySelector('.tip').removeAttribute('style');
     }
-    window.addEventListener("beforeinstallprompt", function(event) {
-      console.log("beforeinstallprompt event was fired");
+    
+    window.addEventListener('beforeinstallprompt', event => {
+      console.log('beforeinstallprompt event was fired');
+      // Prevent Chrome <= 67 from automatically showing the prompt
       event.preventDefault();
-      _this.installPromptEvent = event;
+      // Stash the event so it can be triggered later.
+      this.installPromptEvent = event;
+      // Update the install UI to notify the user app can be installed
       btnInstall.disabled = false;
     });
-    btnInstall = document.querySelector(".btnInstall");
-    btnInstall.addEventListener("click", function() {
+    btnInstall = document.querySelector('.btnInstall');
+    btnInstall.addEventListener('click', () => {
+      // Update the install UI to remove the install button
       btnInstall.disabled = true;
+      // Show the modal add to home screen dialog
       installPromptEvent.prompt();
-      installPromptEvent.userChoice.then(function(choice) {
-        if (choice.outcome === "accepted") {
-          console.log("User accepted the A2HS prompt");
-          btnInstall.style.display = "none";
+      // Wait for the user to respond to the prompt
+      installPromptEvent.userChoice.then(choice => {
+        if (choice.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+          btnInstall.style.display = 'none';
         } else {
-          console.log("User dismissed the A2HS prompt");
+          console.log('User dismissed the A2HS prompt');
         }
+        // Clear the saved prompt since it can't be used again
         installPromptEvent = null;
       });
     });
