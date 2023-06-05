@@ -97,6 +97,7 @@
 <script>
     "use strict";
     var _this = void 0;
+    var btnInstall = document.querySelector(".btnInstall");
     if (touch) {
       document.querySelector(".logo").removeAttribute("style");
       document.querySelector(".keys").removeAttribute("style");
@@ -109,7 +110,6 @@
       _this.installPromptEvent = event;
       btnInstall.disabled = false;
     });
-    btnInstall = document.querySelector(".btnInstall");
     btnInstall.addEventListener("click", function() {
       btnInstall.disabled = true;
       installPromptEvent.prompt();
